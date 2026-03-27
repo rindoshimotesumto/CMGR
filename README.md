@@ -37,7 +37,7 @@ cmgr/
 git clone git@github.com:rindoshimotesumto/CMGR.git
 
 # Переходим в папку проекта
-cd cmgr
+cd CMGR
 
 # Устанавливаем зависимости
 pip install -r requirements.txt
