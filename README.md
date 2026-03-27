@@ -9,24 +9,25 @@
 
 # 📂 Структура проекта
 ```
-cmgr/
+CMGR/
 ├── src/
 │   ├── core/
-│   │   └── logger.py      # настройка логирования
+│   │   └── logger.py           # настройка логирования
 │   ├── database/
-│   │   ├── models/        # .sql для генерации таблиц
-│   │   ├── repo/          # запросы к БД
-│   │   ├── database.py    # подключение к БД
-│   │   └── redis_cli.py   # логика временных банов (Redis)
-│   ├── handlers/
-│   │   └── admin.py       # админские команды, ручной бан
-│   ├── middlewares/
-│   │   └── moderator.py   # проверка на бан-ворды, очистка Join/Leave
-│   └── services/
-│       └── moderator.py   # логика выдачи бана, расчет TTL
+│   │   ├── models/             # .sql для генерации таблиц
+│   │   ├── repo/               # запросы к БД
+│   │   ├── database.py         # подключение к БД
+│   │   └── redis_cli.py        # логика временных банов (Redis)
+│   └── bot/
+│       ├── handlers/
+│       │   └── admin.py        # админские команды, ручной бан
+│       ├── middlewares/
+│       │   └── moderator.py    # проверка на бан-ворды, очистка Join/Leave
+│       └── services/
+│           └── ban.py          # логика выдачи бана, расчет TTL
 ├── .env.example
 ├── .gitignore
-├── main.py                # точка запуска
+├── main.py                     # точка запуска
 └── requirements.txt
 ```
 
@@ -46,5 +47,5 @@ pip install -r requirements.txt
 cp .env.example .env
 
 # Запускаем бота
-python main.py
+python src/bot/bot.py
 ```
